@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://mhorojnwvnofldsstzrq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ob3Jvam53dm5vZmxkc3N0enJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY1ODIsImV4cCI6MjA2MTUyMjU4Mn0.qrJaGKcD8mIotc-GvcIfXbmfxb2W9jbxTZoKlkA574Y"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Development environment variables
+[context.development.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://mhorojnwvnofldsstzrq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ob3Jvam53dm5vZmxkc3N0enJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY1ODIsImV4cCI6MjA2MTUyMjU4Mn0.qrJaGKcD8mIotc-GvcIfXbmfxb2W9jbxTZoKlkA574Y"
+
+# Production environment variables
+[context.production.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://mhorojnwvnofldsstzrq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ob3Jvam53dm5vZmxkc3N0enJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY1ODIsImV4cCI6MjA2MTUyMjU4Mn0.qrJaGKcD8mIotc-GvcIfXbmfxb2W9jbxTZoKlkA574Y"
+
+# Branch deploy environment variables
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://mhorojnwvnofldsstzrq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ob3Jvam53dm5vZmxkc3N0enJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY1ODIsImV4cCI6MjA2MTUyMjU4Mn0.qrJaGKcD8mIotc-GvcIfXbmfxb2W9jbxTZoKlkA574Y"
+
+# Deploy preview environment variables
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_SUPABASE_URL = "https://mhorojnwvnofldsstzrq.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ob3Jvam53dm5vZmxkc3N0enJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY1ODIsImV4cCI6MjA2MTUyMjU4Mn0.qrJaGKcD8mIotc-GvcIfXbmfxb2W9jbxTZoKlkA574Y"

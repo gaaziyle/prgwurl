@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 export default function Home() {
   const [imageId, setImageId] = useState<string | null>(null);
@@ -16,6 +16,13 @@ export default function Home() {
   ) => {
     const file = event.target.files?.[0];
     if (!file) return;
+
+    if (!isSupabaseConfigured()) {
+      setError(
+        "Supabase is not configured. Please check your environment variables."
+      );
+      return;
+    }
 
     try {
       setIsUploading(true);
@@ -80,6 +87,22 @@ export default function Home() {
       setTimeout(() => setCopied(false), 2000);
     }
   };
+
+  if (!isSupabaseConfigured()) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center p-4">
+          <h1 className="text-xl font-bold mb-4">⚠️ Configuration Required</h1>
+          <p className="text-gray-600">
+            Supabase environment variables are not configured.
+            <br />
+            Please set NEXT_PUBLIC_SUPABASE_URL and
+            NEXT_PUBLIC_SUPABASE_ANON_KEY.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
